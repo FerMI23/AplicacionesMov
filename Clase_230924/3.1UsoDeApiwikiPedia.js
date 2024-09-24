@@ -1,7 +1,5 @@
-const terminoBusqueda = 'Programación'; // Término que deseas buscar 
-const url = 
-`https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=$ 
-{terminoBusqueda}&format=json&origin=*`; 
+const terminoBusqueda = 'Programación web'; // Término que deseas buscar 
+const url = `https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=${terminoBusqueda}&format=json&origin=*`; 
 //Función para obtener resultados de Wikipedia
 async function buscarEnWikipedia () { 
 try { 
@@ -30,7 +28,7 @@ document.getElementById('resultados').textContent = `No se encontraron resultado
 } catch (error) { 
 // En caso de error, mostrar un mensaje 
 'No se encontraron resultados'
-document.getElementById('resultados').textContent = 'Error al obtener los datos de Wikipedia.'; 
+document.getElementById('resultados').textContent = `Error al obtener los datos de Wikipedia.`; 
 } 
 } 
 console.error ('Error:', error); 
