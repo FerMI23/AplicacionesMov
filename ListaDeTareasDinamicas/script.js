@@ -2,23 +2,21 @@ const taskInput = document.getElementById('taskInput');
         const addTaskButton = document.getElementById('addTaskButton');
         const ListaTareas = document.getElementById('ListaTareas');
 
-        // Arreglo
         let tasks = [];
 
-        // Función para agregar tarea
         const addTask = () => {
             const taskText = taskInput.value.trim();
             if (taskText) {
-                tasks.push(taskText); // Agregar tarea
-                updateListaTareas(); // Actualizar
-                console.log(tasks); // Mostrar
-                taskInput.value = ''; // Limpiar
+                tasks.push(taskText);
+                updateListaTareas(); 
+                console.log(tasks); 
+                taskInput.value = ''; 
             }
         };
 
        
         const updateListaTareas = () => {
-            ListaTareas.innerHTML = ''; // Limpiar la lista
+            ListaTareas.innerHTML = '';
             tasks.forEach((task, index) => {
                 const li = document.createElement('li');
                 li.textContent = task;
@@ -27,9 +25,9 @@ const taskInput = document.getElementById('taskInput');
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Eliminar';
                 deleteButton.onclick = () => {
-                    tasks.splice(index, 1); // Eliminar tarea
-                    updateListaTareas(); // Actualizar visualmente
-                    console.log(tasks); // Mostrar en consola
+                    tasks.splice(index, 1);
+                    updateListaTareas();
+                    console.log(tasks);
                 };
 
                 li.appendChild(deleteButton);
@@ -37,5 +35,4 @@ const taskInput = document.getElementById('taskInput');
             });
         };
 
-        // Evento para el botón de agregar tarea
         addTaskButton.onclick = addTask;
